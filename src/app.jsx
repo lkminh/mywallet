@@ -1,10 +1,11 @@
 import React from 'react'
+import Home from './scenes/Home'
 
 export default class App extends React.Component {
     render() {
         return (
             <div>
-                <h1>My Wallet</h1>
+                <Home/>
             </div>
         )
     }
