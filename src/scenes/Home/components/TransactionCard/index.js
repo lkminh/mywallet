@@ -3,6 +3,7 @@
  */
 import React from 'react'
 import TransactionItem from './transactionItem.js'
+import styles from './transactionCard.scss'
 
 export default class TransactionCard extends React.Component {
     render() {
@@ -13,7 +14,7 @@ export default class TransactionCard extends React.Component {
         const monthAndYear = `${month} ${date.getYear()}`
 
         return (
-            <div className="transactionCard">
+            <div className={styles.transactionCard}>
                 <div className="transactionHeader">
                     <span className="day">{dayInNumber}</span>
                     <span className="date">
@@ -26,6 +27,7 @@ export default class TransactionCard extends React.Component {
                         this.props.transactions.map((transaction) => {
                             return (
                                 <TransactionItem
+                                    externalClassName={styles.transactionItem}
                                     key = {transaction.date}
                                     category={transaction.category}
                                     note={transaction.note}
