@@ -25,7 +25,14 @@ module.exports = {
         }, {
             test: /\.scss/,
             loader: ExtractTextPlugin.extract("css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader"),
-        }]
+        },{
+            test: /\.(jpg|png|svg)$/,
+            loader: 'url-loader',
+            options: {
+                limit: 25000,
+                name: '[path][name].[hash].[ext]',
+            },
+        },]
     },
     devtool: "source-map",
     plugins: [
