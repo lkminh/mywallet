@@ -1,20 +1,23 @@
 import React from 'react'
 import classNames from 'classnames'
 // import styles from
-const styles = {}
+import styles from './home.scss'
 
 import TransactionCard from './components/TransactionCard'
 export default class Home extends React.Component {
     render() {
         return (
-            <div>
+            <div className={styles.homeScreen}>
                 <h1>Home</h1>
                 <div className={classNames(styles.transactionCardList)}>
                     {
                         TRANSACTIONS.map((transaction) =>
-                            <TransactionCard date={transaction.date} transactions={transaction.transactions}/>)
+                            <TransactionCard
+                                externalClassName={styles.transactionCard}
+                                date={transaction.date}
+                                transactions={transaction.transactions}
+                                key={transaction.date}/>)
                     }
-
                 </div>
 
             </div>
