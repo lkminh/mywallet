@@ -23,6 +23,9 @@ module.exports = {
             loader: 'babel-loader',
             exclude: /node_modules/
         }, {
+            test: /\.css$/,
+            loader: 'css-loader/locals'
+        }, {
             test: /\.scss/,
             loader: ExtractTextPlugin.extract("css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader"),
         },{

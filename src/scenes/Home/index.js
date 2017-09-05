@@ -1,14 +1,16 @@
 import React from 'react'
+import 'typeface-roboto'
 import classNames from 'classnames'
-// import styles from
-import styles from './home.scss'
+import Button from 'material-ui/Button'
 
+import styles from './home.scss'
 import TransactionCard from './components/TransactionCard'
 export default class Home extends React.Component {
     render() {
         return (
             <div className={styles.homeScreen}>
                 <h1>Home</h1>
+                <Button>Add</Button>
                 <div className={classNames(styles.transactionCardList)}>
                     {
                         TRANSACTIONS.map((transaction) =>
