@@ -8,7 +8,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
     inject: 'body'
 })
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/home.js',
     output: {
         path:  path.resolve('dist'),
         filename: 'app.bundle.js'
@@ -24,7 +24,8 @@ module.exports = {
             exclude: /node_modules/
         }, {
             test: /\.css$/,
-            loader: 'css-loader/locals'
+            loader: ExtractTextPlugin.extract("css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader"),
+            // loader: 'css-loader/locals'
         }, {
             test: /\.scss/,
             loader: ExtractTextPlugin.extract("css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader"),
