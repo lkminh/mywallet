@@ -8,7 +8,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
     inject: 'body'
 })
 module.exports = {
-    entry: './src/home.js',
+    entry: './src/index.js',
     output: {
         path:  path.resolve('dist'),
         filename: 'app.bundle.js'
